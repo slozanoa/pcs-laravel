@@ -20,8 +20,9 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/prueba', [PruebaController::class, 'prueba']);
+
 Route::post('/api/prueba', [UserController::class, 'prueba']);
 Route::post('/api/user/register', [UserController::class, 'register']);
 Route::post('/api/user/login', [UserController::class, 'login']);
+Route::get('/api/user/getUsers', [UserController::class, 'getUser']);
 

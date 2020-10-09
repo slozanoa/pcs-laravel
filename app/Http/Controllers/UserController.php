@@ -21,8 +21,6 @@ class UserController extends Controller
      //recoger los datos por post
       
       $json = $request->input('json', null);
-      var_dump($json);
-      die();
       $params = json_decode($json);
       $params_array = json_decode($json,true);
       if(!empty($params) && !empty($params_array)){
@@ -111,5 +109,16 @@ class UserController extends Controller
             }
         }
         return response()->json($signup,200);
+  }
+   public function  getUser(){
+
+      $users = User::all();
+      $data = array(
+                   'status' => 'success',
+                   'code' =>200,
+                   'user' =>$users
+                   
+               );
+      return response()->json($data, $data['code']);
   }
 }
