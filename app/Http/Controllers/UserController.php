@@ -21,7 +21,7 @@ class UserController extends Controller
      //recoger los datos por post
       
       $json = $request->input('json', null);
-      $params = json_decode($json);
+    $params = json_decode($json);
       $params_array = json_decode($json,true);
       if(!empty($params) && !empty($params_array)){
           
